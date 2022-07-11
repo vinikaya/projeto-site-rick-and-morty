@@ -1,0 +1,33 @@
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+    padding: 0px;
+    height: 100vh;
+}
+header {
+    flex: 1;
+    background-color: #353535;
+}
+.container {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    
+}
+.lado1{
+    flex: 1;
+    display: flex;
+    justify-content: space-evenly;
+}
+.lado2 {
+    flex: 1;
+}
+
+
+
+
+section {
+    flex: 4;
+    background-color: #1e1b1b;
+}
