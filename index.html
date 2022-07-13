@@ -11,17 +11,17 @@
     <header>
         <div class="container">
             <div class="lado1">
-                <form id="entradaDados" action="">
+                <form id="selectDados" action="">
                     <select class="selecao" name="" id="">
                         <option value="character">Personagem</option>
                         <option value="location">Localização</option>
                         <option value="epis">Episódios</option>
                     </select>
                 </form>
-                <form id="entradaDados" class="entrada-dados" action="">
-                    <input type="text" placeholder="Escreva aqui...">
+                <form id="entrada-Dados" class="entrada-dados" action="">
+                    <input id="entradaDados" type="text" placeholder="Escreva aqui...">
                 </form>
-                <button>Buscar</button>
+                <but  ton id="buscar">Buscar</but>
             </div>
             <div class="lado2">
                 <h1>Rick and Morty Infos</h1>
@@ -29,21 +29,24 @@
         </div>      
     </header>
     <section>
-        <div class="container">
-            <div class="show">
-                <div class="a1"><p>Nome: <span> Rick</span></p></div>
-                <div class="a2"><p>Status: <span>Alive</span><div class="status-alive"></div></p></div>
-                <img src="" alt="" srcset="">
-                <div class="seta-baixo"><div>&or;</div></div>
-            </div>
-            <div class="hid">
-                <div class="a1">
-                    <div class="gender">Genero: Male</div>
-                    <div class="especie">Especie: Human</div>
+        <div class="model">
+            <div class="container">
+                <div class="show">
+                    <div class="a1"><p>Nome: <span> Rick</span></p></div>
+                    <div class="a2"><p>Status: <span>Alive</span><div class="status-alive"></div></p></div>
+                    <img src="" alt="" srcset="">
+                    <div class="seta-baixo"><div>&or;</div></div>
                 </div>
+                <div class="hid">
+                    <div class="a1">
+                        <div class="gender">Genero: <span>Male</span></div>
+                        <div class="especie">Especie: <span>Human</span></div>
+                    </div>
+                
                 <div class="a2">
-                    <div class="ultimo-local">Localização atual: Citadel of ricks</div>
-                    <div class="local-origem">Local de origen: Earth</div>
+                    <div class="ultimo-local">Localização atual: <span>Citadel of ricks</span></div>
+                    <div class="local-origem">Local de origen: <span>Earth</span></div>
+                </div>
                 </div>
             </div>
         </div>
