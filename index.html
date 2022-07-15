@@ -7,6 +7,28 @@
     <title>Rick and Morty Infos</title>
     <link rel="stylesheet" href="/style.css">
 </head>
+
+<div class="model">
+    <div class="container">
+        <div class="show">
+            <div class="a1"><p>Nome: <span> Rick</span></p></div>
+            <div class="a2"><p>Status: <span>Alive</span><div class="status-alive"></div></p></div>
+            <img src="" alt="" srcset="">
+            <div class="seta-baixo"><div>&or;</div></div>
+        </div>
+        <div class="hid">
+            <div class="a1">
+                <div class="gender">Genero: <span>...</span></div>
+                <div class="especie">Especie: <span>Human</span></div>
+            </div>
+            <div class="a2">
+                <div class="ultimo-local">Localização atual: <span>...</span></div>
+                <div class="local-origem">Local de origen: <span>Earth</span></div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <body>
     <header>
         <div class="container">
@@ -21,7 +43,8 @@
                 <form id="entrada-Dados" class="entrada-dados" action="">
                     <input id="entradaDados" type="text" placeholder="Escreva aqui...">
                 </form>
-                <but  ton id="buscar">Buscar</but>
+                <button id="buscar">Buscar</button>
+                <div class="espaco"><button class="reload">&#8635;</button></div>
             </div>
             <div class="lado2">
                 <h1>Rick and Morty Infos</h1>
@@ -29,27 +52,9 @@
         </div>      
     </header>
     <section>
-        <div class="model">
-            <div class="container">
-                <div class="show">
-                    <div class="a1"><p>Nome: <span> Rick</span></p></div>
-                    <div class="a2"><p>Status: <span>Alive</span><div class="status-alive"></div></p></div>
-                    <img src="" alt="" srcset="">
-                    <div class="seta-baixo"><div>&or;</div></div>
-                </div>
-                <div class="hid">
-                    <div class="a1">
-                        <div class="gender">Genero: <span>Male</span></div>
-                        <div class="especie">Especie: <span>Human</span></div>
-                    </div>
-                
-                <div class="a2">
-                    <div class="ultimo-local">Localização atual: <span>Citadel of ricks</span></div>
-                    <div class="local-origem">Local de origen: <span>Earth</span></div>
-                </div>
-                </div>
-            </div>
-        </div>
+
+        <div class="charArea"></div>
+
     </section>
 
     <script src="script.js"></script>

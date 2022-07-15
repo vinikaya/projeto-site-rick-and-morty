@@ -50,7 +50,7 @@ form input {
     font-family: sans-serif;
     font-weight: bold;
 }
-.lado1 button {
+#buscar {
     background-color: #1e1b1b;
     border-radius: 5px;
     color: white;
@@ -62,8 +62,23 @@ form input {
     font-size: 23px;
     cursor: pointer;
 }
-.lado1 button:hover {
+#buscar:hover {
     background-color: rgb(61, 61, 61);
+}
+.espaco {
+    width: 25px;
+    height: 40px;
+}
+.reload {
+    background-color: #3d3d3d;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+    width: 25px;
+    height: 40px;
+    opacity: 0;
+    transition: opacity .5s linear;
 }
 .lado2 h1 {
     display: flex;
@@ -83,17 +98,26 @@ section {
     background-color: #1e1b1b;
     display: flex;
     justify-content: center;
-    padding: 40px;
+    padding: 20px;
+}
+.model {
+    max-width: 900px;
+    width: 100%;
+    display: none;
+}
+.charArea {
+    max-width: 900px;
+    width: 100%;
 }
 section .container {
     display: flex;
     flex-direction: column;
     width: 100%;
+    margin-top: 20px;
 }
-
 .show {
     height: 100px;
-    max-width: 900px;
+
     width: 100%;
     border-radius: 10px;
     background-color: #353535;
@@ -106,8 +130,11 @@ section .container {
 .show .a1 {
     flex: 2;
     margin-left: 40px;
-    font-size: 30px;
+    font-size: 25px;
     font-weight: bold;
+}
+.a1 span {
+    font-size: 20px;
 }
 .show .a2 {
     flex: 2;
@@ -125,14 +152,15 @@ section .container {
 }
 .show img {
     flex: 1;
-    width: 50px;
-    height: 50px;
+    width: auto;
+    height: 100px;
 }
 .show .seta-baixo {
     flex: 1;
     margin-right: 40px;
     display: flex;
     justify-content: center;
+    cursor: pointer;
 }
 .seta-baixo div {
     width: 110px;
@@ -150,12 +178,12 @@ section .container {
 .hid {
     overflow: hidden;
     height: 100px;
-    max-width: 900px;
     width: 100%;
     border-radius: 10px;
     background-color: #353535;
-    display: flex;
+    display: none;
     align-items: center;
+    transition: height .5s ease;
 }
 .hid .a1 {
     margin-left: 30px;
