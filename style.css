@@ -196,5 +196,7 @@ section .container {
     }
     #buscar{
         margin-left: 20px;
+        font-size: 19px;
     }
+
 }
