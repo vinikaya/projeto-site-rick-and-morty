@@ -33,17 +33,14 @@
     <header>
         <div class="container">
             <div class="lado1">
-                <form id="selectDados" action="">
-                    <select class="selecao" name="" id="">
+                    <select class="selecao" id="select">
                         <option value="character">Personagem</option>
                         <option value="location">Localização</option>
                         <option value="epis">Episódios</option>
                     </select>
-                </form>
                 <form id="entrada-Dados" class="entrada-dados" action="">
                     <input id="entradaDados" type="text" placeholder="Escreva aqui...">
                 </form>
-                
                 <div class="espaco">
                     <button id="buscar">Buscar</button>
                     <button class="reload">&#8635;</button>
@@ -55,9 +52,9 @@
         </div>      
     </header>
     <section>
-
+        <div class="warning"></div>
         <div class="charArea"></div>
-
+        
     </section>
 
     <script src="script.js"></script>

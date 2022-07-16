@@ -1,11 +1,16 @@
 
 document.querySelector('#buscar').addEventListener("click", (event)=> {
   event.preventDefault();
-  var nomeApi = document.querySelector('#entradaDados').value; 
-  console.log(nomeApi);
-  chamarApi(nomeApi);
-  disable();
+  var textApi = document.querySelector('#entradaDados').value; 
+  console.log(textApi);
+  
+  var select = document.querySelector('#select');
+  var textselect = select.options[select.selectedIndex].value;
+  
+
+  validarselect(textselect, textApi);
 })
+
 
 async function chamarApi(nome) {
   let url = `https://rickandmortyapi.com/api/character/?name=${nome}`; 
@@ -39,7 +44,7 @@ async function chamarApi(nome) {
       document.querySelector('.charArea').append(charItem);
       document.querySelector('.charArea').style.height = '100%';
 
-      console.log(item);
+      
     });
     
 } 
@@ -56,4 +61,23 @@ function disable() {
 }
 function reset() {
   location.reload();
+}
+
+function validarselect(textselect,textApi) {
+  console.log(textselect);
+  
+  validartext(textApi);
+}
+
+function validartext(textApi) {
+    document.querySelector('.warning').innerHTML = 'Carregando...';
+    if(textApi === '') {
+      document.querySelector('.warning').innerHTML = 'Campo vazio, escreva um nome!!!';
+    } else {
+        document.querySelector('.warning').innerHTML = 'Para fazer uma nova pesquie, pressione o botão de reload!!!';
+        chamarApi(textApi);
+        disable();
+    }
+  
+  
 }
