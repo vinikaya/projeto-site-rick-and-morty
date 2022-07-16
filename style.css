@@ -93,111 +93,67 @@ form input {
 }
 
 
+
+.model {
+    display: none;
+}
 section {
     flex: 4;
     background-color: #1e1b1b;
-    display: flex;
-    justify-content: center;
     padding: 20px;
 }
-.model {
-    max-width: 900px;
-    width: 100%;
-    display: none;
-}
-.charArea {
-    max-width: 900px;
-    width: 100%;
-}
-section .container {
+section .charArea {
     display: flex;
-    flex-direction: column;
-    width: 100%;
-    margin-top: 20px;
+    flex-wrap: wrap;
+    width: 100vw;
 }
-.show {
-    height: 100px;
 
-    width: 100%;
+section .container {
+    width: 380px;
+    height: 300px;
+    background-color:#353535;
+    margin: 10px;
     border-radius: 10px;
-    background-color: #353535;
+}
+.topcard {
     display: flex;
-    align-items: center;
+    color: black;
 }
-.show p {
-    font-family: sans-serif;
+
+.img img {
+    margin: 15px;
+    border-radius: 5px;
+    width: auto;
+    height: 190px;
 }
-.show .a1 {
-    flex: 2;
-    margin-left: 40px;
-    font-size: 25px;
+
+.infos1 .a1 {
     font-weight: bold;
+    font-size: 18px
 }
-.a1 span {
-    font-size: 20px;
+.infos1 span {
+    color: white;
 }
-.show .a2 {
-    flex: 2;
-    font-size: 30px;
-    font-weight: bold;
+.infos1 ,.a2, .gender {
+    font-size: 16px;
+}
+.infos1 .a2 {
     display: flex;
     align-items: center;
 }
 .status-alive {
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
     border-radius: 10px;
     background-color: green;
     margin-left: 10px;
 }
-.show img {
-    flex: 1;
-    width: auto;
-    height: 100px;
-}
-.show .seta-baixo {
-    flex: 1;
-    margin-right: 40px;
-    display: flex;
-    justify-content: center;
-    cursor: pointer;
-}
-.seta-baixo div {
-    width: 110px;
-    height: 50px;
-    background-color: #1e1b1b;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 40px;
-    border-radius: 8px;
-}
-.seta-baixo div:hover {
-    background-color: #141313;
-}
-.hid {
-    overflow: hidden;
-    height: 100px;
-    width: 100%;
-    border-radius: 10px;
-    background-color: #353535;
-    display: none;
-    align-items: center;
-    transition: height .5s ease;
-}
-.hid .a1 {
-    margin-left: 30px;
-    font-size: 20px;
+.bottoncard {
+    margin-left: 15px;
+    font-size: 16px;
     font-weight: bold;
 }
-.hid .a2 {
-    margin-left: 30px;
-    font-size: 20px;
-    font-weight: bold;
+.bottoncard span {
+    color: white;
 }
-.container div {
-    color: #141111;
-}
-span {
-    color: rgb(146, 146, 146);
-}
+

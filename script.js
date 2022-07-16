@@ -38,7 +38,7 @@ async function chamarApi(nome) {
       //exibindo na tela a estrutura clonada
       document.querySelector('.charArea').append(charItem);
 
-      
+      console.log(item);
     });
     
 } 
