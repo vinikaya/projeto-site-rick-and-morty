@@ -1,6 +1,10 @@
 *{
     font-family: serif;
 }
+html {
+    overflow-y: scroll;
+}
+
 body {
     display: flex;
     flex-direction: column;
@@ -11,6 +15,7 @@ body {
 header {
     flex: 1;
     background-color: #353535;
+    
 }
 header .container {
     display: flex;
@@ -66,8 +71,7 @@ form input {
     background-color: rgb(61, 61, 61);
 }
 .espaco {
-    width: 25px;
-    height: 40px;
+    display: flex;
 }
 .reload {
     background-color: #3d3d3d;
@@ -79,6 +83,7 @@ form input {
     height: 40px;
     opacity: 0;
     transition: opacity .5s linear;
+    margin-left: 5px;
 }
 .lado2 h1 {
     display: flex;
@@ -105,7 +110,9 @@ section {
 section .charArea {
     display: flex;
     flex-wrap: wrap;
-    width: 100vw;
+    justify-content: center;
+    height: 0px;
+    transition: height 5s ease;
 }
 
 section .container {
@@ -114,6 +121,7 @@ section .container {
     background-color:#353535;
     margin: 10px;
     border-radius: 10px;
+    box-shadow: 0 0 1em black;
 }
 .topcard {
     display: flex;
@@ -124,12 +132,12 @@ section .container {
     margin: 15px;
     border-radius: 5px;
     width: auto;
-    height: 190px;
+    height: 160px;
 }
 
 .infos1 .a1 {
     font-weight: bold;
-    font-size: 18px
+    font-size: 20px;
 }
 .infos1 span {
     color: white;
@@ -157,3 +165,36 @@ section .container {
     color: white;
 }
 
+@media (max-width:1070px){
+    
+    header .container {
+        flex-direction: column;
+    }
+    html {
+        overflow-y: auto;
+    }
+    .lado1 {
+        margin-top: 30px;
+    }
+}
+@media (max-width:507px){
+
+    .lado1 {
+        display: block;
+    }
+    .lado2 h1 {
+        font-size: 30px;
+    }
+    .lado1 {
+        margin-top: 10px;
+    }
+    #selectDados {
+        margin-bottom: 10px;
+    }
+    #entrada-Dados {
+        margin-bottom: 10px;
+    }
+    #buscar{
+        margin-left: 20px;
+    }
+}
