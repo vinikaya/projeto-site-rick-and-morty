@@ -74,7 +74,7 @@ function validartext(textApi) {
     if(textApi === '') {
       document.querySelector('.warning').innerHTML = 'Campo vazio, escreva um nome!!!';
     } else {
-        document.querySelector('.warning').innerHTML = 'Para fazer uma nova pesquie, pressione o botão de reload!!!';
+        document.querySelector('.warning').innerHTML = 'Para fazer uma nova pesquisa, pressione o botão de reload!!!';
         chamarApi(textApi);
         disable();
     }
