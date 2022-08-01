@@ -1,36 +1,33 @@
 
-document.querySelector('#buscar').addEventListener("click", (event)=> {
+document.querySelector('#buscar').addEventListener("click", (event) => {
   event.preventDefault();
-  var textApi = document.querySelector('#entradaDados').value; 
-  console.log(textApi);
-  
+  var textApi = document.querySelector('#entradaDados').value;
   var select = document.querySelector('#select');
   var textselect = select.options[select.selectedIndex].value;
-  
+  validartext(textApi, textselect);
+});
 
-  validarselect(textselect, textApi);
-})
+document.querySelector('.reload').addEventListener("click", () => { reset() });
 
+async function chamarApi(nome, textselect) {
 
-async function chamarApi(nome) {
-  let url = `https://rickandmortyapi.com/api/character/?name=${nome}`; 
-
+  if (textselect === 'character') {
+    let url = `https://rickandmortyapi.com/api/character/?name=${nome}`;
     let results = await fetch(url);
     let json = await results.json();
-    
 
-    json.results.map((item,index)=>{
+    json.results.map((item, index) => {
       //clonando a estrutura modelo dos personagens
       charItem = document.querySelector('.model .container').cloneNode(true);
-      
+
       //modificando os elementos dentro da estrutura de acordo com o objeto recebido
       charItem.querySelector('.a1 span').innerHTML = item.name;
       charItem.querySelector('.a2 span').innerHTML = item.status;
-      if(item.status === 'alive'){
+      if (item.status === 'alive') {
         charItem.querySelector('.a2 .status-alive').style.backgroundColor = 'green';
-      } else if(item.status === 'Dead') {
-        charItem.querySelector('.a2 .status-alive').style.backgroundColor= 'red';
-      } else if(item.status === 'unknown') {
+      } else if (item.status === 'Dead') {
+        charItem.querySelector('.a2 .status-alive').style.backgroundColor = 'red';
+      } else if (item.status === 'unknown') {
         charItem.querySelector('.a2 .status-alive').style.backgroundColor = 'grey';
       }
 
@@ -43,13 +40,20 @@ async function chamarApi(nome) {
       //exibindo na tela a estrutura clonada
       document.querySelector('.charArea').append(charItem);
       document.querySelector('.charArea').style.height = '100%';
-
-      
     });
+  }
+  if (textselect === 'location') {
     
-} 
+    let url = `https://rickandmortyapi.com/api/location/55`;
+    let results = await fetch(url);
+    let json = await results.json();
+    console.log(json)
+    
+  }
 
-document.querySelector('.reload').addEventListener("click",()=>{reset()});
+
+
+}
 
 function disable() {
   document.querySelector('#buscar').disabled = true;
@@ -59,25 +63,18 @@ function disable() {
   document.querySelector('.reload').style.opacity = '1';
   document.querySelector('#entradaDados').disabled = true;
 }
+
 function reset() {
   location.reload();
 }
 
-function validarselect(textselect,textApi) {
-  console.log(textselect);
-  
-  validartext(textApi);
-}
+function validartext(textApi, textselect) {
 
-function validartext(textApi) {
-    document.querySelector('.warning').innerHTML = 'Carregando...';
-    if(textApi === '') {
-      document.querySelector('.warning').innerHTML = 'Campo vazio, escreva um nome!!!';
-    } else {
-        document.querySelector('.warning').innerHTML = 'Para fazer uma nova pesquisa, pressione o botão de reload!!!';
-        chamarApi(textApi);
-        disable();
-    }
-  
-  
+  if (textApi === '') {
+    document.querySelector('.warning').innerHTML = 'Campo vazio, escreva um nome!!!';
+  } else {
+    document.querySelector('.warning').innerHTML = 'Para fazer uma nova pesquisa, pressione o botão de reload!!!';
+    chamarApi(textApi, textselect);
+    disable();
+  }
 }
